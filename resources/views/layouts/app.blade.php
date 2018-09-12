@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <style>
+    {{-- <style>
     // universal
 body {
     font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
@@ -63,7 +63,7 @@ body {
     }
 }
 
-    </style>
+    </style> --}}
 
 </head>
 
