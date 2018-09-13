@@ -11,16 +11,21 @@ class UsersController extends Controller
 {
     //
     public function show(User $user){
-        // render view show in users folder with a list of $user model
+        
+        // do polcy in controller
+        $this -> authorize('show',$user);
+
         return view('users.show', compact('user'));
     }
 
     public function edit(User $user){
+        $this -> authorize('edit', $user);
         return view('users.edit', compact('user'));
     }
 
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user){
 
+        $this -> authorize('update', $user);
         // validate request profile image
         // dd($request->avatar);
 
