@@ -12,14 +12,18 @@
     
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel BBS
+                    Laravel Food BBS
                 </a>
             </div>
     
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-    
+                    <li class="{{ active_class(if_route('topics.index')) }}"><a href="{{ route('topics.index') }}">Home</a></li>
+                    <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a href="{{ route('categories.show', 1) }}">Chinese</a></li>
+                    <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 2))) }}"><a href="{{ route('categories.show', 2) }}">Spanish</a></li>
+                    <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 3))) }}"><a href="{{ route('categories.show', 3) }}">Korean</a></li>
+                    <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 4))) }}"><a href="{{ route('categories.show', 4) }}">Ital</a></li>
                 </ul>
     
                 <!-- Right Side Of Navbar -->

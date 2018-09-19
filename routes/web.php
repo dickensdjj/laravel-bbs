@@ -35,3 +35,6 @@ Route::resource('users', 'UsersController',['only' => ['show','update','edit']])
 
 // Topic Route...
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+// Categories Route...
+Route::resource('categories', 'CategoriesController',['only'=>['show']]);
