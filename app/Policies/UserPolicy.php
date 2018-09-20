@@ -19,8 +19,6 @@ class UserPolicy
         //
     }
 
-    use HandlesAuthorization;
-
     // return true or false
     // first param: currentUser, second param: authorised user
     public function update(User $currentUser, User $user)
