@@ -22,7 +22,7 @@
 
                     <div class="media-body meta">
 
-                        <a href="{{ route('categories.show', $topic->category) }}" title="{{ $topic->category->name }}">
+                        <a href="{{ route('categories.show', $topic->category->id) }}" title="{{ $topic->category->name }}">
                             <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                              {{ $topic->category->name }}
                         </a>
@@ -34,7 +34,7 @@
                         </a>
                         <span> • </span>
                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        <span class="timeago" title="最后活跃于">{{ $topic->updated_at->diffForHumans() }}</span>
+                        <span class="timeago" title="last updated at">{{ Request::get('order')=='recent' ? $topic->created_at->diffForHumans() : $topic->updated_at->diffForHumans() }}</span>
                     </div>
 
                 </div>

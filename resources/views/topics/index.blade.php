@@ -16,10 +16,10 @@
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="#">Last Reply</a></li>
-                    <li role="presentation"><a href="#">Latest News</a></li>
-                </ul>
+                    <ul class="nav nav-pills">
+                            <li class="{{ active_class( ! if_query('order', 'recent') ) }}"><a href="{{ Request::url() }}?order=default">Latest Update</a></li>
+                            <li class="{{ active_class(if_query('order', 'recent')) }}"><a href="{{ Request::url() }}?order=recent">Latest News</a></li>
+                        </ul>
             </div>
 
             <div class="panel-body">

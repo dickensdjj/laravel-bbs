@@ -12,13 +12,23 @@ class TopicsController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
-
-	public function index()
-	{
-		$topics = Topic::with('user','category')->paginate(30);
-		return view('topics.index', compact('topics'));
 	}
+	
+	// called scopeWithOrder()
+	public function index(Request $request)
+    {
+        $topics = Topic::withOrder($request->order)->paginate(20);
+        return view('topics.index', compact('topics'));
+	}
+	
+
+	// No use of local scope designed in Topic Model
+	// public function index()
+	// {
+
+	// 	$topics = Topic::with('user','category')->paginate(30);
+	// 	return view('topics.index', compact('topics'));
+	// }
 
     public function show(Topic $topic)
     {
