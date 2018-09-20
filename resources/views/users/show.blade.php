@@ -33,13 +33,15 @@
             </div>
             <hr>
     
-            {{-- user posts --}}
             <div class="panel panel-default">
-                <div class="panel-body">
-                    no data -_-
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#">Topic</a></li>
+                            <li><a href="#">Reply</a></li>
+                        </ul>
+                        @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
+                    </div>
                 </div>
             </div>
-    
         </div>
-    </div>    
-@stop
+        @stop
