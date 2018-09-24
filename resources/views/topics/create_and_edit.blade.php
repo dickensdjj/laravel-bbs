@@ -10,12 +10,22 @@
     <script type="text/javascript"  src="{{ asset('js/uploader.js') }}"></script>
     <script type="text/javascript"  src="{{ asset('js/simditor.js') }}"></script>
 
+    
     <script>
     $(document).ready(function(){
         var editor = new Simditor({
             textarea: $('#editor'),
+            upload: {
+                url: '{{ route('topics.upload_image') }}',
+                params: { _token: '{{ csrf_token() }}' },
+                fileKey: 'upload_file',
+                connectionCount: 3,
+                leaveConfirm: 'Uploading... Do not close this page.'
+            },
+            pasteImage: true,
         });
     });
+    
     </script>
 
 @stop
