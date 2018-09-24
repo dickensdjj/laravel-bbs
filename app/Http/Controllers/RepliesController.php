@@ -28,8 +28,9 @@ class RepliesController extends Controller
     public function destroy(Reply $reply)
     {
         $this->authorize('destroy', $reply);
+        $topic_id = $reply->topic_id;
         $reply->delete();
 
-        return redirect()->route('replies.index')->with('message','comment deleted');
+        return redirect()->route('topics.show',$topic_id)->with('message','comment deleted');
     }
 }
