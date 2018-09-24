@@ -36,8 +36,8 @@
             <div class="panel panel-default">
                     <div class="panel-body">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#">Topic</a></li>
-                            <li><a href="#">Reply</a></li>
+                            <li class="{{ active_class( ! if_query('tab', 'replies') ) }}"><a href="{{ Request::url() }}?tab=default">Topic</a></li>
+                            <li class="{{ active_class(if_query('tab', 'replies') ) }}"><a href="{{ Request::url() }}?tab=replies">Reply</a></li>
                         </ul>
                         {{-- @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)]) --}}
                         @if (if_query('tab', 'replies'))
