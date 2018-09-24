@@ -68,7 +68,7 @@
                         <select class="form-control" name="category_id" required>
                             <option value="" hidden disabled selected>Choose Category</option>
                             @foreach ($categories as $value)
-                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                <option value="{{ $value->id }}" {{ $topic->category_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
                             @endforeach
                         </select>
                     </div>
