@@ -61,7 +61,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                        <input class="form-control" type="text" name="title" value="{{ old('title', $topic->title ) }}" placeholder="请填写标题" required/>
+                        <input class="form-control" type="text" name="title" value="{{ old('title', $topic->title ) }}" placeholder="Title" required/>
                     </div>
 
                     <div class="form-group">
@@ -74,11 +74,11 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea name="body" class="form-control" id="editor" rows="3" placeholder="请填入至少三个字符的内容。" required>{{ old('body', $topic->body ) }}</textarea>
+                        <textarea name="body" class="form-control" id="editor" rows="3" placeholder="At least 3 characters" required>{{ old('body', $topic->body ) }}</textarea>
                     </div>
 
                     <div class="well well-sm">
-                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 保存</button>
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
                     </div>
                 </form>
             </div>
